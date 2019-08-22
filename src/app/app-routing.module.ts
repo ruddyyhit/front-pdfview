@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ViewpageComponent } from './viewpage/viewpage.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'viewpage', component: ViewpageComponent}
+  {path: 'viewpage', component: ViewpageComponent},
+  {path: '**', component: ErrorComponent}
 ];
 
 @NgModule({

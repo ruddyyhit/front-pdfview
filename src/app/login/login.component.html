@@ -4,9 +4,10 @@
 	</head>
 	<body>
 		<form>
-		<label>	Name:</label> <input type="text" name="name"/>
-		<label for="">	Password:</label> <input type="password" name="password"/>
-      <button (click)="welcomeLogin()">Submit</button>
+      <small *ngIf="invalidLogin" >{{errorMessage}}</small>
+		<label for="name">Name</label> <input type="text" name="name" [(ngModel)]='name' /> <br>
+		<label for="password">Password</label> <input type="password" name="password" [(ngModel)]='password' /> <br>
+      <button (click)="welcomeLogin()" >Login</button>
 		</form>
 	</body>
 </html>

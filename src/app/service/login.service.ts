@@ -1,19 +1,25 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { User } from '../models/user/user.model';
 
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+
+};
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private http: HttpClient) {
+  constructor(private https: HttpClient) {
 
    }
+   // private baseUrl = 'http://localhost/8080/';
    loginServiceddemo() {
-     return this.http.get('http://localhost/8080/login');
+     return this.https.get<User>('http://localhost/8080/login');
    }
    viewPageService(username, password) {
-     return this.http.post('http://localhost/8080/login', {
+     return this.https.post('http://localhost/8080/login', {
        username, password});
    }
 

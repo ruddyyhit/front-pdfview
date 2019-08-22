@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-viewpage',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewpageComponent implements OnInit {
 
-  constructor() { }
+
+  // private route: ActivatedRoute
+
+   constructor() {
+
+   }
+
 
   ngOnInit() {
+
+    console.log('hello');
+    // console.log(this.route.snapshot.params['name']);
   }
 
 }
